@@ -1,0 +1,39 @@
+*{
+    font-family: sans-serif;
+}
+
+body{
+    margin: 0px;
+}
+
+header{
+    font-size: 24px;
+    color: white;
+    background-color: #0053ec;
+    text-align: center;
+    padding: 1%;
+}
+
+#header-text:hover{
+    animation: 5s shake infinite alternate;
+    cursor: default;
+}
+
+@keyframes shake {
+    0% { transform: skewX(-15deg); }
+    5% { transform: skewX(15deg); }
+    10% { transform: skewX(-15deg); }
+    15% { transform: skewX(15deg); }
+    20% { transform: skewX(0deg); }
+    100% { transform: skewX(0deg); }  
+  }
+
+  #form{
+      margin-top: 1%;
+      display: flex;
+      justify-content: center;
+  }
+
+  input{
+      margin-bottom: 5%;
+  }
