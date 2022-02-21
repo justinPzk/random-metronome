@@ -38,3 +38,8 @@ header{
   input{
       margin-bottom: 5%;
   }
+
+  #dev-note{
+      margin-top: 5%;
+      text-align: center;
+  }
