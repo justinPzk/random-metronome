@@ -17,6 +17,7 @@ header{
 #header-text:hover{
     animation: 5s shake infinite alternate;
     cursor: default;
+    user-select: none;
 }
 
 @keyframes shake {
@@ -28,7 +29,7 @@ header{
     100% { transform: skewX(0deg); }  
   }
 
-  #form{
+  #form-wrapper{
       margin-top: 1%;
       display: flex;
       justify-content: center;
