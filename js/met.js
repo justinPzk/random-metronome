@@ -1,7 +1,6 @@
 console.log("Javascript Intialized");
 const hi = new Audio('./audio/hi.wav');
 const lo = new Audio('./audio/lo.wav');
-let bpm = 70;
 import Timer from './timer.js';
 
 document.addEventListener("DOMContentLoaded", function(event){
@@ -18,7 +17,8 @@ document.querySelector('#submit').addEventListener('click', e =>{
         alert (`Bars (${bars}) must be greater than 0 and the minimum tempo (${min}) must be greater than the maximum (${max}).`);
     }
     else {
-        return;
+        let bpm = Math.random() * (max - min) + min;
+        console.log(bpm);
     }
 });
 
@@ -28,11 +28,6 @@ document.querySelector('#stop').addEventListener('click', e =>{
 
 });
 
-function playClick(){
-    hi.play();
-}
 
-const metronome = new Timer(playClick, 60000 / 70, { immediate: true });
+const metronome = new Timer(playClick, 60000 / bpm, { immediate: true });
 
-metronome.start();
-console.log("temp");
