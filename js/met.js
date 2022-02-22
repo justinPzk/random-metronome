@@ -36,6 +36,8 @@ document.querySelector('#submit').addEventListener('click', e =>{
 document.querySelector('#stop').addEventListener('click', e =>{
     console.log("Stop Button Pressed");
     metronome.stop();
+    count = 0;
+    bar = 0;
     playing = false;
 });
 
