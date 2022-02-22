@@ -6,6 +6,15 @@ body{
     margin: 0px;
 }
 
+html, body{
+    height: 100%;
+}
+
+#wrapper{
+    position: relative;
+    min-height: 100%;
+}
+
 header{
     font-size: 24px;
     color: white;
@@ -42,4 +51,15 @@ header{
   #dev-note{
       margin-top: 5%;
       text-align: center;
+  }
+
+  footer{
+      position: relative;
+      height: 16.5px;
+      margin-top: -16.5px;
+      clear: both;
+      width: 100%;
+      text-align: center;
+      color: white;
+      background-color: #0053ec;
   }
