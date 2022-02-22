@@ -1,5 +1,7 @@
 console.log("Javascript Intialized");
-
+const hi = new Audio('./audio/hi.wav');
+const lo = new Audio('./audio/lo.wav');
+import Timer from './timer.js';
 
 document.addEventListener("DOMContentLoaded", function(event){
 document.querySelector('#submit').addEventListener('click', e =>{
