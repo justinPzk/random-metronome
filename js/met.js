@@ -28,6 +28,7 @@ document.querySelector('#submit').addEventListener('click', e =>{
         playing = true;
         metronome.timeInterval = 60000 / bpm;
         metronome.start();
+        document.getElementById("current-tempo").innerHTML = bpm.toString();
         console.log(bpm);
     }
 });
@@ -50,6 +51,7 @@ function playClick() {
         bar = 0;
         let newbpm = Math.floor(Math.random() * (max - min)) + parseInt(min);
         metronome.timeInterval = 60000 / newbpm
+        document.getElementById("current-tempo").innerHTML = newbpm.toString();
         console.log(`New Tempo ${newbpm}`)
     }
     if (count === 0) {
