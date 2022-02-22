@@ -1,12 +1,12 @@
 console.log("Javascript Intialized");
 const hi = new Audio('./audio/hi.wav');
 const lo = new Audio('./audio/lo.wav');
+const currentTempo = document.getElementById("current-tempo");
 import Timer from './timer.js';
 let count = 0;
 let min = 70;
 let max = 110;
 let bpm = 70;
-let playing = false;
 let bars = 1;
 let bar = 0;
 
@@ -24,11 +24,10 @@ document.querySelector('#submit').addEventListener('click', e =>{
         alert (`Bars (${bars}) must be greater than 0 and the minimum tempo (${min}) must be greater than the maximum (${max}).`);
     }
     else {
-        bpm = Math.floor(Math.random() * (max - min)) + parseInt(min);
-        playing = true;
+        generateBPM();
         metronome.timeInterval = 60000 / bpm;
         metronome.start();
-        document.getElementById("current-tempo").innerHTML = bpm.toString();
+        currentTempo.innerHTML = bpm.toString();
         console.log(bpm);
     }
 });
@@ -38,7 +37,6 @@ document.querySelector('#stop').addEventListener('click', e =>{
     metronome.stop();
     count = 0;
     bar = 0;
-    playing = false;
 });
 
 });
@@ -51,10 +49,10 @@ function playClick() {
     }
     if (bar == bars) {
         bar = 0;
-        let newbpm = Math.floor(Math.random() * (max - min)) + parseInt(min);
-        metronome.timeInterval = 60000 / newbpm
-        document.getElementById("current-tempo").innerHTML = newbpm.toString();
-        console.log(`New Tempo ${newbpm}`)
+        generateBPM();
+        metronome.timeInterval = 60000 / bpm
+        currentTempo.innerHTML = bpm.toString();
+        console.log(`New Tempo ${bpm}`)
     }
     if (count === 0) {
         hi.play();
@@ -65,6 +63,10 @@ function playClick() {
     }
 
     count++;
+}
+
+function generateBPM() {
+    bpm = Math.floor(Math.random() * (max - min)) + parseInt(min);
 }
 
 const metronome = new Timer(playClick, 60000 / bpm, { immediate: true });
