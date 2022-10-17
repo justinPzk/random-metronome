@@ -3,12 +3,12 @@ const hi = new Audio('./audio/hi.wav');
 const lo = new Audio('./audio/lo.wav');
 const currentTempo = document.getElementById("current-tempo");
 import Timer from './timer.js';
-let count = 0;
-let min = 70;
-let max = 110;
-let bpm = 70;
-let bars = 1;
-let bar = 0;
+let count = 0; //current quarter beat count
+let min = 70; //minimum bpm
+let max = 110; //maximum bpm
+let bpm = 70; //current bpm
+let bars = 1; // number of bars to be run before tempo change
+let bar = 0; //counter of current bar
 
 document.addEventListener("DOMContentLoaded", function(event){
 document.querySelector('#submit').addEventListener('click', e =>{
@@ -20,7 +20,7 @@ document.querySelector('#submit').addEventListener('click', e =>{
     console.log(`Bars: ${bars}`);
     console.log(`Min: ${min}`);
     console.log(`Max: ${max}`);
-    if (bars == 0 || min == max) {
+    if (bars <= 0 || min == max) {
         alert (`Bars (${bars}) must be greater than 0 and the minimum tempo (${min}) must be greater than the maximum (${max}).`);
     }
     else {
