@@ -53,6 +53,7 @@ function playClick() {
         lo.play();
         lo.currentTime = 0;
         count++;
+        console.log("Count: " + count);
     }
    else if (count === 4) {
         lo.play();
@@ -69,7 +70,7 @@ function playClick() {
         currentTempo.innerHTML = bpm.toString();
         console.log(`New Tempo ${bpm}`)
     }
-console.log("Count: " + count);
+
 
 }
 
