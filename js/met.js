@@ -46,19 +46,23 @@ function playClick() {
     if (count === 0) {
         hi.play();
         hi.currentTime = 0;
+        count++;
     }
 
     else if (count < 4){
         lo.play();
         lo.currentTime = 0;
+        count++;
     }
    else if (count === 4) {
         lo.play();
         lo.currentTime = 0;
-        count = 0;
+        count = 1;
         bar++;
    }
     else if (bar == bars) {
+        hi.play();
+        hi.currentTime = 0;
         bar = 0;
         generateBPM();
         metronome.timeInterval = 60000 / bpm
@@ -67,7 +71,6 @@ function playClick() {
     }
 
 
-    count++;
 }
 
 function generateBPM() {
