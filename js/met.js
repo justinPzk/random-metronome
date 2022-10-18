@@ -69,7 +69,7 @@ function playClick() {
         currentTempo.innerHTML = bpm.toString();
         console.log(`New Tempo ${bpm}`)
     }
-
+console.log("Count: " + count);
 
 }
 
