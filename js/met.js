@@ -43,24 +43,29 @@ document.querySelector('#stop').addEventListener('click', e =>{
 
 
 function playClick() {
-    if (count === 4) {
+    if (count === 0) {
+        hi.play();
+        hi.currentTime = 0;
+    }
+
+    else if (count < 4){
+        lo.play();
+        lo.currentTime = 0;
+    }
+   else if (count === 4) {
+        lo.play();
+        lo.currentTime = 0;
         count = 0;
         bar++;
-    }
-    if (bar == bars) {
+   }
+    else if (bar == bars) {
         bar = 0;
         generateBPM();
         metronome.timeInterval = 60000 / bpm
         currentTempo.innerHTML = bpm.toString();
         console.log(`New Tempo ${bpm}`)
     }
-    if (count === 0) {
-        hi.play();
-        hi.currentTime = 0;
-    } else{
-        lo.play();
-        lo.currentTime = 0;
-    }
+
 
     count++;
 }
