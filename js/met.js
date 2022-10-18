@@ -46,19 +46,14 @@ function playClick() {
     if (count === 0) {
         hi.play();
         hi.currentTime = 0;
-        count++;
     }
 
-    else if (count < 4){
+    if (count < 4){
         lo.play();
         lo.currentTime = 0;
-        count++;
-        console.log("Count: " + count);
     }
-   else if (count === 4) {
-        lo.play();
-        lo.currentTime = 0;
-        count = 1;
+   if (count === 4) {
+        count = 0;
         bar++;
    }
     else if (bar == bars) {
@@ -71,6 +66,8 @@ function playClick() {
         console.log(`New Tempo ${bpm}`)
     }
 
+    count++;
+    console.log("Count: " + count);
 
 }
 
